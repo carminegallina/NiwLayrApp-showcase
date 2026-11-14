@@ -1,45 +1,69 @@
 # NiwLayrApp
 
-**Progetto personale Android · Kotlin · Jetpack Compose · in sviluppo**
+**English** · [Italiano](README.it.md)
 
-NiwLayrApp aiuta fotografi e creator a progettare un feed visivo prima della pubblicazione. Riunisce la pianificazione dei contenuti, un editor per post, caroselli e mosaici e strumenti di analisi in un'app che lavora sul dispositivo.
+**Personal Android project · Kotlin · Jetpack Compose · in development**
 
-## Schermata principale del feed
+NiwLayrApp helps photographers and creators design a visual feed before publishing it.
+It brings content planning, an editor for posts, carousels and mosaics, and analysis
+tools together in one app that runs entirely on the device.
 
-La griglia mostra i post, la palette e il punteggio del feed. Nell'esempio sono caricati tre post dimostrativi creati con IA.
+## Main feed screen
 
-<img src="assets/schermata-principale-feed.png" alt="Schermata principale della griglia con tre post creati con IA" width="320">
+The grid shows the posts, the palette and the feed score. The example is loaded with
+three demonstration posts created with AI.
 
-## Il problema
+<img src="assets/schermata-principale-feed.png" alt="Main grid screen with three posts created with AI" width="320">
 
-Preparare un feed richiede spesso di passare tra galleria, strumenti di modifica, appunti e calendario. NiwLayrApp permette di organizzare e rivedere i contenuti in un unico spazio, senza collegare un account social o caricare le proprie immagini su un server.
+## The problem
 
-## Funzioni principali
+Preparing a feed usually means moving between the gallery, editing tools, notes and a
+calendar. NiwLayrApp lets you arrange and review the content in a single place, without
+connecting a social account or uploading your images to a server.
 
-- **Pianificazione visiva:** anteprima della griglia, riordino dei contenuti e segnaposto per le idee ancora da realizzare.
-- **Creazione:** editor per post singoli, caroselli e mosaici, con salvataggio dei progetti ed esportazione delle immagini.
-- **Calendario editoriale:** programmazione dei contenuti e promemoria locali; l'app non pubblica automaticamente sui social.
-- **Analisi del feed:** indicatori basati su caratteristiche visive e una valutazione estetica aggiuntiva tramite un modello IA eseguito sul telefono con TensorFlow Lite.
-- **Gestione dei dati:** backup e ripristino dei progetti per trasferire il proprio lavoro.
+## Main features
 
-## Scelte di progetto
+- **Visual planning:** grid preview, reordering, and placeholders for ideas not shot yet.
+- **Creation:** an editor for single posts, carousels and mosaics, with saved projects and image export.
+- **Editorial calendar:** content scheduling and local reminders; the app never posts to social networks by itself.
+- **Feed analysis:** indicators derived from visual features, plus an additional aesthetic score from an AI model running on the phone through TensorFlow Lite.
+- **Data handling:** backup and restore of projects, so the work can be moved between devices.
 
-L'app è sviluppata in Kotlin con Jetpack Compose e Material 3. Le immagini e l'analisi restano sul dispositivo: non sono necessari un backend, un account Instagram o servizi di analisi remoti. Le funzioni di base dell'analisi restano disponibili anche quando la valutazione IA è disattivata.
+## Design choices
 
-Il lavoro ha richiesto di gestire importazione delle immagini, progetti modificabili, formati di contenuto diversi, esportazione e persistenza locale, mantenendo coerente l'esperienza tra le schermate.
+The app is written in Kotlin with Jetpack Compose and Material 3. Images and analysis
+stay on the device: no backend, no Instagram account and no remote analytics service are
+involved. The basic analysis stays available even when the AI score is switched off.
 
-## Euristiche e valutazione IA: una prova nell'app
+The work meant handling image import, editable projects, several content formats, export
+and local persistence, while keeping the experience coherent across screens.
 
-Per confrontare i due segnali ho creato con IA tre immagini curate e tre versioni volutamente degradate delle stesse scene. Le immagini dei due feed hanno soggetti e colori simili; quelle degradate sono sfocate, mal inquadrate e illuminate male. Le anteprime e le schermate seguenti sono state generate o acquisite dall'app su un Galaxy S23 Ultra. Non contengono foto personali.
+## Heuristics against the AI score: a test inside the app
 
-| Feed curato | Feed degradato |
+To compare the two signals I generated three curated images with AI, plus three
+deliberately degraded versions of the same scenes. Both feeds use similar subjects and
+colours; the degraded ones are blurry, badly framed and badly lit. The previews and
+screenshots below were generated or captured by the app on a Galaxy S23 Ultra. They
+contain no personal photographs.
+
+| Curated feed | Degraded feed |
 | --- | --- |
-| ![Anteprima dei tre post del feed curato, creati con IA](assets/anteprima-feed-curato.jpg) | ![Anteprima dei tre post del feed degradato, creati con IA](assets/anteprima-feed-degradato.jpg) |
-| ![Analisi nell'app del feed curato creato con immagini IA](assets/feed-curato.png) | ![Analisi nell'app del feed degradato creato con immagini IA](assets/feed-degradato.png) |
-| Punteggio del feed **81/100** · Estetica IA **51/100** | Punteggio del feed **87/100** · Estetica IA **11/100** |
+| ![Preview of the three posts in the curated feed, created with AI](assets/anteprima-feed-curato.jpg) | ![Preview of the three posts in the degraded feed, created with AI](assets/anteprima-feed-degradato.jpg) |
+| ![In-app analysis of the curated feed built from AI images](assets/feed-curato.png) | ![In-app analysis of the degraded feed built from AI images](assets/feed-degradato.png) |
+| Feed score **81/100** · AI aesthetics **51/100** | Feed score **87/100** · AI aesthetics **11/100** |
 
-In questa prova le euristiche, basate soprattutto su colore e luce, danno un punteggio più alto al feed degradato perché le immagini restano cromaticamente uniformi. Il modello estetico distingue invece le foto curate da quelle sfocate e mal composte. I punteggi descrivono soltanto questi due feed dimostrativi: non sono una misura di accuratezza del modello né una previsione dei risultati sui social.
+In this test the heuristics, which lean mostly on colour and light, score the degraded
+feed higher, because its images stay chromatically consistent. The aesthetic model, on
+the other hand, does tell the curated photographs from the blurry, badly composed ones.
+The scores describe only these two demonstration feeds: they are neither a measure of the
+model's accuracy nor a prediction of how a feed would perform on social media.
 
-## Stato
+## Status
 
-NiwLayrApp è un progetto in fase di verifica prima di una possibile distribuzione commerciale. Non è attualmente disponibile sul Play Store. Questa pagina documenta il progetto; il codice sorgente e il file del modello non sono pubblici. Le immagini mostrate qui sono materiali dimostrativi creati per questa pagina.
+NiwLayrApp is being evaluated ahead of a possible commercial release. It is not on the
+Play Store today. This page documents the project; the source code and the model file are
+not public. The images shown here are demonstration material created for this page.
+
+## Licence
+
+All rights reserved — see [LICENSE](LICENSE).
